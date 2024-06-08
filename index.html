@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập hàm</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/function-9.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="container py-5">
+
+        <div class="card w-75 mx-auto">
+            <div class="bg-holder d-none d-lg-block bg-card"></div>
+            <div class="card-body position-relative p-0">
+                <div class="row p-0">
+                    <div class="col-12">
+
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 col-xl-2 nav-tabs nav flex-md-column nav-pills"
+                        id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link btn-tabs mb-2 active " id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#bai1" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">Bài 1</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#bai2" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">Bài 2</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#bai3" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">Bài 3</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#bai4" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">Bài 4</button>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-9 col-xl-10 tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="bai1" role="tabpanel"
+                            aria-labelledby="v-pills-home-tab">
+                            <h4 class="card--heading">🏫 Quản lý tuyển sinh</h4>
+                            <div class="callout callout-info">
+
+                                <p>💡<b>Đề bài</b>
+                                <ul>
+                                    <li>Trong kỳ thi tuyển, một thí sinh sẽ trúng truyền nếu có điểm tổng kết lớn hơn
+                                        hoặc bằng điểm chuẩn và không có môn nào điểm 0.</li>
+                                    <li>- Điểm tổng kết là tổng điểm của 3 môn thi và điểm ưu tiên.</li>
+                                    <li>- Điểm ưu tiên bao gồm điểm ưu tiên theo khu vực và điểm ưu tiên theo đối tượng.
+                                    </li>
+                                    <li>Viết chương trình nhập: điểm chuẩn của hội đồng, điểm 3 môn thi của thí sinh,
+                                        khu vực (nhập X nếu không thuộc khu vực ưu tiên) và đối tượng dự thi (nhập 0 nếu
+                                        không thuộc đối tượng ưu tiên). Cho biết thí sinh đó đậu hay rớt và tổng số điểm
+                                        đạt được.</li>
+                                    <li>Khu vực:</li>
+                                    <li>- A : 2</li>
+                                    <li>- B : 1</li>
+                                    <li>- C : 0.5</li>
+                                    <li>Đối tượng:</li>
+                                    <li>- 1 : 2.5</li>
+                                    <li>- 2 : 1.5</li>
+                                    <li>- 3 : 1</li>
+                                </ul>
+
+                                💡<b>Mô hình 3 khối</b><br><br>
+                                Đầu vào: Điểm 3 môn, Khu vực, Đối tượng, Điểm chuẩn của hội đồng<br><br>
+                                Các bước xử lý:<br>
+                                <ul>
+                                    <li>Tạo biến diemMon1, diemMon2, diemMon3, khuVuc, doiTuong, tongDiem,
+                                        diemChuanHoiDong, ketQua</li>
+                                    <li>Kiểm tra khu vực nhập vào, nếu A thì gán 2; nếu B thì gán 1; nếu C thì gán 0.5;
+                                        nếu X thì gán 0</li>
+                                    <li>Kiểm tra đối tượng nhập vào, nếu 1 thì gán 2.5; nếu 2 thì gán 1.5; nếu 3 thì gán
+                                        1; nếu 0 thì gán 0</li>
+                                    <li>Tính tổng điểm theo công thức: tongDiem = diemMon1 + diemMon2 + diemMon3 +
+                                        khuVuc + doiTuong;</li>
+                                    <li>So sánh tổng điểm với điểm chuẩn hội đồng, nếu tongDiem < diemChuanHoiDong thì
+                                            Rớt, còn lại Đậu</li>
+                                    <li>In ra màn hình kết quả tổng điểm và kết quả đậu rớt</li>
+                                </ul>
+                                Đầu ra: Kết quả (Đậu / Rớt) & Tổng điểm
+                                </p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputDiemMon1"
+                                        placeholder="Điểm môn thứ 1">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputDiemMon2"
+                                        placeholder="Điểm môn thứ 2">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputDiemMon3"
+                                        placeholder="Điểm môn thứ 3">
+                                </div>
+
+                                <div class="col-12 col-lg-4">
+                                    <select class="form-control form__input" name="" id="selKhuVuc">
+                                        <option value="0">Chọn khu vực</option>
+                                        <option value="2">A</option>
+                                        <option value="1">B</option>
+                                        <option value="0.5">C</option>
+                                        <option value="0">X</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 col-lg-4">
+                                    <select class="form-control form__input" name="" id="selDoiTuong">
+                                        <option value="0">Chọn đối tượng</option>
+                                        <option value="0">0</option>
+                                        <option value="2.5">1</option>
+                                        <option value="1.5">2</option>
+                                        <option value="1">3</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="number" class="form-control form__input" id="inputDiemChuan"
+                                        placeholder="Điểm chuẩn của hội đồng">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnKetQuaQLTS"
+                                        onClick="QuanLyTuyenSinh();">
+                                        Kết Quả
+                                    </button>
+                                </div>
+
+                                <div class="alert alert-success" role="alert">
+                                    👉<span id="txtKetQuaQLTS"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="bai2" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <h4 class="card--heading">🔋 Tính tiền điện</h4>
+                            <div class="callout callout-info">
+
+                                <p>💡<b>Đề bài</b>
+                                <ul>
+                                    <li>Viết chương trình nhập vào thông tin tiêu thụ điện (Tên, số Kw)</li>
+                                    <li>Tính và xuất tiền trả theo quy tắc:</li>
+                                    <li>- 50kw đầu: 500d/kw</li>
+                                    <li>- 50kw kế: 650d/kw</li>
+                                    <li>- 100kw kế: 850d/kw</li>
+                                    <li>- 150kw kế: 1100d/kw</li>
+                                    <li>- Còn lại: 1300d/kw</li>
+                                </ul>
+
+                                💡<b>Mô hình 3 khối</b><br><br>
+                                Đầu vào: Tên & số Kw<br><br>
+                                Các bước xử lý:<br>
+                                <ul>
+                                    <li><b>B1.</b> Tạo biến ten, soKw, tongTien</li>
+                                    <li><b>B2.</b> Kiểm tra nếu soKw <= 50, tongTien=soKw * 500, và tiếp tục B6; nếu
+                                            không: soKw còn lại=soKw - 50, tongTien=50 * 500, và tiếp tục B3</li>
+                                    <li><b>B3.</b> Kiểm tra nếu soKw còn lại <= 50, tongTien=tongTien + soKw * 650, và
+                                            tiếp tục B7; nếu không: soKw còn lại=soKw - 50, tongTien=tongTien + 50 *
+                                            650, và tiếp tục B4</li>
+                                    <li><b>B4.</b> Kiểm tra nếu soKw còn lại <= 100, tongTien=tongTien + soKw * 850, và
+                                            tiếp tục B7; nếu không: soKw còn lại=soKw - 100, tongTien=tongTien + 100 *
+                                            850, và tiếp tục B5</li>
+                                    <li><b>B5.</b> Kiểm tra nếu soKw còn lại <= 150, tongTien=tongTien + soKw * 1100, và
+                                            tiếp tục B7; nếu không: soKw còn lại=soKw - 150, tongTien=tongTien + 150 *
+                                            1100, và tiếp tục B6</li>
+                                    <li><b>B6.</b> tongTien = tongTien + soKw * 1300</li>
+                                    <li><b>B7.</b> In ra màn hình kết quả tổng tiền</li>
+                                </ul>
+                                Đầu ra: Tổng tiền
+                                </p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="text" class="form-control form__input" id="inputTen"
+                                        placeholder="Nhập họ tên">
+                                </div>
+
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputSoKw"
+                                        placeholder="Nhập số kw">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnTinhTienDien"
+                                        onClick="TinhTienDien();">
+                                        Tính tiền điện
+                                    </button>
+                                </div>
+
+                                <div class="alert alert-success" role="alert">
+                                    👉<span id="txtTongTienDien"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="bai3" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <h4 class="card--heading">💰 Tính thuế thu nhập cá nhân</h4>
+                            <div class="callout callout-info">
+
+                                <p>💡<b>Đề bài</b>
+                                <ul>
+                                    <li>Viết chương trình nhập vào thông tin của 1 cá nhân (Họ tên, tổng thu nhập năm,
+                                        số người phụ thuộc). Tính và xuất thuế thu nhập cá nhân phải trả theo quy định
+                                        sau:</li>
+                                    <li>Thu nhập chịu thuế = Tổng thu nhập năm - 4tr- Số người phụ thuộc * 1.6tr</li>
+                                </ul>
+                                <table style="width:75%">
+                                    <tr>
+                                        <th>Thu nhập chịu thuế(triệu)</th>
+                                        <th>Thuế suất (%)</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Đến 60</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trên 60 đến 120</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trên 120 đến 210</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trên 210 đến 384</td>
+                                        <td>20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trên 384 đến 624</td>
+                                        <td>25</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trên 624 đến 960</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trên 960</td>
+                                        <td>35</td>
+                                    </tr>
+                                </table>
+                                <br>
+                                💡<b>Mô hình 3 khối</b><br><br>
+                                Đầu vào: Tên, tổng thu nhập năm, số người phụ thuộc<br><br>
+                                Các bước xử lý:<br>
+                                <ul>
+                                    <li><b>B1.</b> Tạo biến ten, tongThuNhap, soNguoiPhuThuoc, , thuNhapChiuThue, thue
+                                    </li>
+                                    <li><b>B2.</b> Tính thu nhập chịu thuế theo công thức: thuNhapChiuThue = tongThuNhap
+                                        -
+                                        4.000.000 - soNguoiPhuThuoc * 1.600.000</li>
+                                    <li><b>B3.</b> Kiểm tra nếu thuNhapChiuThue < 0, thue=0, và tiếp tục B11; nếu không,
+                                            tiếp tục B4</li>
+                                    <li><b>B4.</b> Kiểm tra nếu thuNhapChiuThue <= 60.000.000, thue=thuNhapChiuThue *
+                                            5%, và tiếp tục B11; nếu không: thuNhapChiuThue còn lại=thuNhapChiuThue -
+                                            60.000.000, thue=60.000.000 * 5%, và tiếp tục B5</li>
+                                    <li><b>B5.</b> Kiểm tra nếu thuNhapChiuThue <= 60.000.000, thue=thuNhapChiuThue *
+                                            10%, và tiếp tục B11; nếu không: thuNhapChiuThue còn lại=thuNhapChiuThue -
+                                            60.000.000, thue=60.000.000 * 10%, và tiếp tục B6</li>
+                                    <li><b>B6.</b> Kiểm tra nếu thuNhapChiuThue <= 90.000.000, thue=thuNhapChiuThue *
+                                            15%, và tiếp tục B11; nếu không: thuNhapChiuThue còn lại=thuNhapChiuThue -
+                                            90.000.000, thue=90.000.000 * 15%, và tiếp tục B7</li>
+                                    <li><b>B7.</b> Kiểm tra nếu thuNhapChiuThue <= 174.000.000, thue=thuNhapChiuThue *
+                                            20%, và tiếp tục B11; nếu không: thuNhapChiuThue còn lại=thuNhapChiuThue -
+                                            174.000.000, thue=174.000.000 * 20%, và tiếp tục B8</li>
+                                    <li><b>B8.</b> Kiểm tra nếu thuNhapChiuThue <= 240.000.000, thue=thuNhapChiuThue *
+                                            25%, và tiếp tục B11; nếu không: thuNhapChiuThue còn lại=thuNhapChiuThue -
+                                            240.000.000, thue=240.000.000 * 25%, và tiếp tục B9</li>
+                                    <li><b>B9.</b> Kiểm tra nếu thuNhapChiuThue <= 336.000.000, thue=thuNhapChiuThue *
+                                            30%, và tiếp tục B11; nếu không: thuNhapChiuThue còn lại=thuNhapChiuThue -
+                                            336.000.000, thue=336.000.000 * 30%, và tiếp tục B10</li>
+                                    <li><b>B10.</b> thue=thuNhapChiuThue * 35%</li>
+                                    <li><b>B11.</b> In ra màn hình kết quả thuế</li>
+                                </ul>
+                                Đầu ra: Thuế
+                                </p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="text" class="form-control form__input" id="inputTen2"
+                                        placeholder="Nhập họ tên">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputThuNhap"
+                                        placeholder="Tổng thu nhập năm">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputSoNguoiPhuThuoc"
+                                        placeholder="Số người phụ thuộc">
+                                </div>
+
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnTinhTienThue"
+                                        onClick="TinhTienThue();">
+                                        Tính tiền thuế
+                                    </button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉<span id="txtThue"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="bai4" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <h4 class="card--heading">🕸️ Tính tiền cáp</h4>
+                            <div class="callout callout-info">
+
+                                <p>💡<b>Đề bài</b>
+                                <ul>
+                                    <li>Viết chương trình tính hóa đơn khách hàng cho một công ty cáp. Có 2 loại khách
+                                        hàng: Nhà dân và doanh nghiệp. Có 2 mức giá tính tiền cáp:</li>
+                                    <li>- Nhà dân:</li>
+                                    <li>+++ Phí xử lý hóa đơn: 4.5$</li>
+                                    <li>+++ Phí dịch vụ cơ bản: 20.5$</li>
+                                    <li>+++ Thuê kênh cao cấp: 7.5$ / kênh</li>
+                                    <li>- Doanh nghiệp:</li>
+                                    <li>+++ Phí xử lý hóa đơn: 15$</li>
+                                    <li>+++ Phí dịch vụ cơ bản: 75$ cho tổng 10 kết nối đầu, mỗi kết nối thêm 5$ / kết
+                                        nối</li>
+                                    <li>+++ Thuê kênh cao cấp: 50$ / kênh</li>
+                                    <li>Chương trình cho phép nhập vào Mã khách hàng, loại khách hàng, số kết nối, số
+                                        kênh cao cấp. Nếu chọn loại khách hàng là Doanh nghiệp ô nhập số kết nối sẽ hiện
+                                        lên, nếu chọn loại khách hàng là nhà dân thì ô nhập kết nối sẽ ẩn đi hoặc
+                                        disabled</li>
+                                </ul>
+
+                                💡<b>Mô hình 3 khối</b><br><br>
+                                Đầu vào: Mã khách hàng, Loại khách hàng, Số kết nối, Số kênh cao cấp<br><br>
+                                Các bước xử lý:<br>
+                                <ul>
+                                    <li>Tạo biến maKH, loaiKH, soKetNoi, soKenhCaoCap, tienCap, phiHoaDon, phiDichVu,
+                                        phiThueKenhCaoCap</li>
+                                    <li>Kiểm tra nếu loại khách hàng là Nhà dân, tienCap = 4.5$ + 20.5$ + 7.5$ *
+                                        soKenhCaoCap</li>
+                                    <li>Kiểm tra nếu loại khách hàng là Doanh nghiệp:</li>
+                                    <li>- Tạo thêm biến soKetNoiThem = 0</li>
+                                    <li>- Nếu soKetNoi > 10, soKetNoiThem = soKetNoi - 10</li>
+                                    <li>- tienCap = 15$ + 75$ + soKetNoiThem * 5$ + 50$ * soKenhCaoCap</li>
+                                    <li>In ra màn hình kết quả tienCap</li>
+                                </ul>
+                                Đầu ra: Tiền cáp
+                                </p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12  col-lg-4">
+                                    <select class="form-control form__input" name="" id="selLoaiKH"
+                                        onchange="disableInput();">
+                                        <option value="">Chọn loại khách hàng</option>
+                                        <option value="nhaDan">Nhà Dân</option>
+                                        <option value="doanhNghiep">Doanh Nghiệp</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 col-lg-4">
+                                    <input type="text" class="form-control form__input" id="inputMaKH"
+                                        placeholder="Nhập mã khách hàng">
+                                </div>
+
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputSoKenh"
+                                        placeholder="Số kênh cao cấp">
+                                </div>
+
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputSoKetNoi"
+                                        placeholder="Số kết nối" hidden>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnTinhTienCap"
+                                        onclick="TinhTienCap();">Tính tiền
+                                        cáp</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉<span id="txtTienCap"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
